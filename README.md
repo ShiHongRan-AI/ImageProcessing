@@ -1,31 +1,92 @@
-# ImageProcessing_Homework
-计算机图像处理课程核心作业合集，聚焦图像特征提取、增强、频域处理三大核心方向，基于Python/OpenCV实现完整算法落地与效果量化分析，适配影像开发/计算摄影场景的算法原型验证需求。
+# ImageProcessing · 数字图像处理算法实战
 
- 核心作业内容
-1. 织物纹理特征分析与疵点检测
-- 核心算法：灰度共生矩阵（GLCM）、特征量化提取、疵点检测
-- 实现功能：提取织物图像的能量、对比度、熵等纹理特征并量化，完成织物表面疵点的检测与定位
-- 技术价值：掌握图像纹理特征量化分析方法，可直接支撑影像质量纹理评估、瑕疵分析等影像开发场景
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green.svg)](https://opencv.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
- 2. 骨骼图像增强（运算+增强）
-- 核心算法：拉普拉斯锐化、Sobel边缘检测、幂律变换（伽马校正）
-- 实现功能：针对骨骼图像完成对比度提升、边缘增强、灰度变换等全流程处理，优化图像视觉效果
-- 技术价值：掌握影像调优核心的图像增强算法，适配计算摄影中暗光/细节增强等核心需求
+基于 **Python + OpenCV** 的数字图像处理算法合集，覆盖**纹理特征分析、图像增强、频域滤波**三大核心方向。每个模块均包含完整算法实现、可视化结果与量化分析，可直接作为影像算法原型的参考实现。
 
- 3. 图像频域处理与滤波
-- 核心算法：快速傅里叶变换（FFT）、高斯滤波、巴特沃斯滤波
-- 实现功能：完成图像频域转换、高低通滤波处理，实现噪声去除与细节保留的平衡优化
-- 技术价值：掌握频域分析方法，适配影像开发中降噪、频域增强等高频场景
+---
 
- 技术栈
-Python | OpenCV | NumPy | Matplotlib（可视化） | ImageJ（质量量化）
+## ✨ 项目亮点
 
-能力体现
-- 熟练掌握图像预处理、特征提取、频域分析等核心算法的落地实现；
-- 具备影像效果量化分析思维，能用客观指标（如纹理特征值、信噪比）评估处理效果；
-- 理解影像开发核心的图像优化逻辑，可快速适配算法原型验证、影像质量分析等实习工作。
+- 🧵 **GLCM 纹理量化分析** — 基于灰度共生矩阵提取能量、对比度、熵等统计特征，将"纹理"这种主观观感转化为可计算的客观指标，并据此完成织物疵点的自动检测与定位
+- 🦴 **多算法串联增强管线** — 拉普拉斯锐化 + Sobel 边缘检测 + 伽马校正组合处理骨骼影像，逐步提升对比度与边缘细节，完整展示每步中间结果
+- 🌊 **频域滤波对比实验** — FFT 频谱分析 + 高斯 / 巴特沃斯滤波器对比，在噪声抑制与细节保留之间寻找最优平衡
+- 📊 **量化评估思维** — 不止"看起来变清晰了"，用特征值表格等客观指标验证处理效果
 
-说明
-本仓库所有代码均为课程实操成果，聚焦影像开发核心技术点。
+---
 
+## 📂 模块一览
 
+| 模块 | 源文件 | 核心算法 | 输出 |
+| :--- | :--- | :--- | :--- |
+| 织物纹理特征分析与疵点检测 | `src/GLCM_texture_defect_detection.py` | 灰度共生矩阵（GLCM）、纹理特征量化 | 疵点检测定位图 + 特征值表 |
+| 骨骼图像增强 | `src/bone_image_enhancement.py` | 拉普拉斯锐化、Sobel 边缘检测、幂律变换 | 全流程分步增强对比图 |
+| 图像频域处理与滤波 | `src/image_fft_filtering.py` | FFT、高斯滤波、巴特沃斯滤波 | 频谱图与滤波效果对比 |
+
+---
+
+## 🖼️ 效果展示
+
+### 骨骼图像增强全流程
+
+![骨骼图像增强](results/bone_enhancement_all_steps.png)
+
+### 织物疵点检测结果
+
+![疵点检测](results/defect_detection_result.png)
+
+### GLCM 纹理特征量化表
+
+![纹理特征表](results/texture_feature_table.png)
+
+### FFT 频域处理
+
+<p>
+<img src="results/fft1.png" width="48%"/>
+<img src="results/fft2.png" width="48%"/>
+</p>
+<p>
+<img src="results/fft3.png" width="48%"/>
+<img src="results/fft4.png" width="48%"/>
+</p>
+
+---
+
+## 📁 目录结构
+
+```
+ImageProcessing/
+├── src/                                # 算法源码
+│   ├── GLCM_texture_defect_detection.py
+│   ├── bone_image_enhancement.py
+│   └── image_fft_filtering.py
+├── results/                            # 实验结果与可视化图表
+│   ├── bone_enhancement_all_steps.png
+│   ├── defect_detection_result.png
+│   ├── texture_feature_table.png
+│   └── fft1~4.png
+├── README.md
+└── LICENSE
+```
+
+---
+
+## 🚀 快速开始
+
+```bash
+pip install opencv-python numpy matplotlib
+
+python src/GLCM_texture_defect_detection.py   # 纹理分析与疵点检测
+python src/bone_image_enhancement.py          # 骨骼图像增强
+python src/image_fft_filtering.py             # 频域滤波实验
+```
+
+## 🛠️ 技术栈
+
+Python · OpenCV · NumPy · Matplotlib · ImageJ（质量量化辅助）
+
+## 📜 许可证
+
+本项目基于 [MIT License](LICENSE) 开源。
